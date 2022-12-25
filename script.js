@@ -1,16 +1,16 @@
 console.log('hello world')
 
 let songs =[
-    {songpath: '1.mp3'},
-    {songpath: '2.mp3'},
-    {songpath: '3.mp3'},
-    {songpath: '4.mp3'},
-    {songpath: '5.mp3'},
-    {songpath: '6.mp3'},
-    {songpath: '7.mp3'},
-    {songpath: '8.mp3'},
-    {songpath: '9.mp3'},
-    {songpath: '10.mp3'}
+    {songpath: 'Songs/1.mp3'},
+    {songpath: 'Songs/2.mp3'},
+    {songpath: 'Songs/3.mp3'},
+    {songpath: 'Songs/4.mp3'},
+    {songpath: 'Songs/5.mp3'},
+    {songpath: 'Songs/6.mp3'},
+    {songpath: 'Songs/7.mp3'},
+    {songpath: 'Songs/8.mp3'},
+    {songpath: 'Songs/9.mp3'},
+    {songpath: 'Songs/10.mp3'}
 ]
 MakeAllPlays = () =>{
         songlist.forEach(element => {
@@ -61,11 +61,11 @@ songlist.forEach(element => {
         index = parseInt(e.target.id)
         if( element.getElementsByTagName('i')[0].classList.contains('fa-circle-play') || audioElement.paused || audioElement.currentTime <= 0)
         {
-            // console.log('${index}.mp3')
-            audioElement.src = `${index+1}.mp3`
+            // console.logSongs/('${index}.mp3')
+            audioElement.src = `Songs/${index+1}.mp3`
             audioElement.currentTime = 0;
             masterPlayButtonPlay();
-            // audioElement.src = '${index+1}.mp3'
+            // audioElement.src = 'Songs/${index+1}.mp3'
         }
         else{
             masterPlayButtonPause();
@@ -78,7 +78,7 @@ songlist.forEach(element => {
 backward.addEventListener('click', ()=>{
             if(index>0){
             index-=1;
-            audioElement.src = `${index+1}.mp3`
+            audioElement.src = `Songs/${index+1}.mp3`
             audioElement.currentTime = 0;
             MakeAllPlays(); 
             masterPlayIconPlays();
@@ -88,7 +88,7 @@ backward.addEventListener('click', ()=>{
             }
             else{
             index=9;
-            audioElement.src = `${index+1}.mp3`
+            audioElement.src = `Songs/${index+1}.mp3`
             audioElement.currentTime = 0;
             MakeAllPlays(); 
             masterPlayIconPlays();
@@ -101,7 +101,7 @@ backward.addEventListener('click', ()=>{
 forward.addEventListener('click', ()=>{
             if(index<9){
             index+=1;
-            audioElement.src = `${index+1}.mp3`
+            audioElement.src = `Songs/${index+1}.mp3`
             audioElement.currentTime = 0;
             MakeAllPlays(); 
             masterPlayIconPlays();
@@ -111,7 +111,7 @@ forward.addEventListener('click', ()=>{
             }
             else{
             index=0;
-            audioElement.src = `${index+1}.mp3`
+            audioElement.src = `Songs/${index+1}.mp3`
             audioElement.currentTime = 0;
             MakeAllPlays(); 
             masterPlayIconPlays();
